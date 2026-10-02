@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedSOP AI Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOGIN SCREEN ============ -->
+<section id="login-screen" class="screen">
+  <div class="login-card">
+    <div class="brand">
+      <span class="brand-mark">+</span>
+      <span class="brand-name">MedSOP<span class="brand-accent">AI</span></span>
+    </div>
+    <p class="login-sub">Sign in to reach hospital procedures in seconds, not binders.</p>
+
+    <form id="login-form" autocomplete="off">
+      <label class="field">
+        <span>Email</span>
+        <input type="email" id="login-email" required placeholder="you@hospital.org">
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <input type="password" id="login-password" required placeholder="••••••••">
+      </label>
+      <p id="login-error" class="error-text hidden"></p>
+      <button type="submit" id="login-btn">
+        <span class="btn-label">Sign in</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ APP SCREEN ============ -->
+<section id="app-screen" class="screen hidden">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">+</span>
+      <span class="brand-name">MedSOP<span class="brand-accent">AI</span></span>
+    </div>
+    <div class="user-block">
+      <span id="user-name" class="user-name"></span>
+      <span id="user-role" class="role-badge"></span>
+      <button id="logout-btn" title="Log out">Log out</button>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <!-- Persistent left nav -->
+    <nav class="side-nav">
+      <a href="#dashboard"  class="nav-item" data-page="dashboard"><span class="nav-ic">&#8962;</span>Dashboard</a>
+      <a href="#chat"       class="nav-item" data-page="chat"><span class="nav-ic">&#9993;</span>Chat</a>
+      <a href="#decision"   class="nav-item" data-page="decision"><span class="nav-ic">&#9888;</span>Emergency</a>
+      <a href="#repository" class="nav-item" data-page="repository"><span class="nav-ic">&#128193;</span>Repository</a>
+      <a href="#summary"    class="nav-item" data-page="summary"><span class="nav-ic">&#128196;</span>Summaries</a>
+      <a href="#analytics"  class="nav-item admin-only" data-page="analytics"><span class="nav-ic">&#128202;</span>Analytics</a>
+      <a href="#users"      class="nav-item admin-only" data-page="users"><span class="nav-ic">&#128101;</span>Users</a>
+    </nav>
+
+    <!-- Router mounts pages here -->
+    <main id="view" class="view"></main>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
